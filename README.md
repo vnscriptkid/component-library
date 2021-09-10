@@ -41,15 +41,28 @@ npm run storybook
 ```
 
 - Add `prettier`
+
 ```
 npm install --save-dev prettier
 ```
+
 - Add config for `prettier` in `.prettierrc`
 - Add format && check scripts in `package.json`
+
 ```json
 "format": "prettier --write .",
 "lint:check": "prettier --check ."
 ```
 
+- Add `eslint`
 
+```console
+npm install --save-dev eslint eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser
+```
 
+- Add config for `eslint` in `.eslintrc`
+- Add lint scripts in `package.json`
+
+```json
+"lint": "eslint src/**"
+```
