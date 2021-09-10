@@ -1,4 +1,5 @@
 # component-library
+
 This is a demonstration of how a component library look like in real-world
 
 1. Shared components
@@ -9,12 +10,15 @@ This is a demonstration of how a component library look like in real-world
 6. Build process
 7. Deployment & automation
 
-- Update `package.json`: 
+- Update `package.json`:
+
 ```json
 "name": "@vnscriptkid/component-library",
 "version": "0.0.0",
 ```
+
 - Install deps
+
 ```json
 "dependencies": {
     "react": ">=16.12.0",
@@ -26,10 +30,26 @@ This is a demonstration of how a component library look like in real-world
     "typescript": "^4.4.2"
 }
 ```
+
 - Update `tsconfig.json`
 - Init storybook, install packages, start
+
 ```console
 npx sb init
 npm install
 npm run storybook
 ```
+
+- Add `prettier`
+```
+npm install --save-dev prettier
+```
+- Add config for `prettier` in `.prettierrc`
+- Add format && check scripts in `package.json`
+```json
+"format": "prettier --write .",
+"lint:check": "prettier --check ."
+```
+
+
+
