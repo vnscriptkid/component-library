@@ -126,3 +126,11 @@ npm install --save-dev rollup rollup-plugin-delete rollup-plugin-node-externals 
 
 ## Github Actions
 - Config workflow in `.github/workflows/publish.yml`
+- Bump version at minor
+```console
+npm version minor
+```
+- Start workflow
+```console
+git push --follow-tags
+```
