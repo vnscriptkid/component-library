@@ -36,3 +36,7 @@ export const StyledInput = styled.input`
     opacity: ${DISABLED_OPACITY};
   }
 `;
+
+export const StyledTextarea = styled(StyledInput as 'textarea').attrs({
+  as: 'textarea',
+})``;
