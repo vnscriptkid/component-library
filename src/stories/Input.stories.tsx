@@ -10,8 +10,8 @@ export default {
 
 export const Default: Story = ({ placeholder }) => (
   <Field>
-    <Field.Label>Hello</Field.Label>
     <Field.Input placeholder={placeholder} />
+    <Field.Label>Hello</Field.Label>
   </Field>
 );
 
