@@ -69,3 +69,18 @@ npm install --save-dev eslint eslint-config-prettier eslint-plugin-react eslint-
 
 - Let people use `Button` component be able to use all props available with normal `button`
 by using `React.forwardRef`
+
+
+## Add testing for lib
+- Install deps
+```console
+npm install --save-dev jest ts-jest @types/jest
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+```
+- Add config for jest in `jest.config.js`
+- Add test scripts in `package.json`
+```json
+"test": "jest",
+```
+- Add `jest-setup.ts` to inject global stuff
+- Include `jest-setup.ts` in `tsconfig.json`
