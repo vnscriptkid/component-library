@@ -1,14 +1,28 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FieldContext } from './FieldContext';
 import { StyledTextarea } from './styles';
 
-export const Textarea = React.forwardRef<
-  HTMLTextAreaElement,
-  React.ComponentPropsWithRef<'textarea'>
->((props, ref) => {
-  const id = useContext(FieldContext);
+export interface TextareaProps extends React.ComponentPropsWithRef<'textarea'> {
+  isResizable?: boolean;
+}
 
-  return <StyledTextarea ref={ref} id={id} {...props} />;
-});
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ isResizable, ...props }, ref) => {
+    const id = useContext(FieldContext);
+
+    return (
+      <StyledTextarea ref={ref} id={id} isResizable={isResizable} {...props} />
+    );
+  }
+);
+
+Textarea.propTypes = {
+  isResizable: PropTypes.bool,
+};
+
+Textarea.defaultProps = {
+  isResizable: true,
+};
 
 Textarea.displayName = 'Field.Textarea';
