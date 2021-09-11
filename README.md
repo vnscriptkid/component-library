@@ -66,3 +66,6 @@ npm install --save-dev eslint eslint-config-prettier eslint-plugin-react eslint-
 ```json
 "lint": "eslint src/**"
 ```
+
+- Let people use `Button` component be able to use all props available with normal `button`
+by using `React.forwardRef`
