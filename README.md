@@ -111,3 +111,15 @@ npm install --save-dev rollup rollup-plugin-delete rollup-plugin-node-externals 
     "build:js": "rollup -c rollup.config.js",
 }
 ```
+
+## Generate types files for typescript consumers
+- Add `tsconfig.build.json`
+- Update `package.json`
+```json
+"types": "dist/typings/index.d.ts",
+"scripts": {
+    "build": "npm run build:js && npm run build:types",
+    "build:js": "rollup -c rollup.config.js",
+    "build:types": "tsc -p tsconfig.build.json"
+}
+```
