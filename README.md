@@ -84,3 +84,30 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom
 ```
 - Add `jest-setup.ts` to inject global stuff
 - Include `jest-setup.ts` in `tsconfig.json`
+
+## Add Babel
+- Install deps
+```console
+npm install --save-dev @babel/core babel-loader
+npm install --save-dev @babel/preset-env @babel/preset-react @babel/preset-typescript @babel/plugin-transform-runtime babel-plugin-styled-components
+npm install @babel/runtime
+```
+- Config babel config in `.babelrc`
+- Add entry point to our lib: `src/index.ts` that exports all components
+
+## Add Rollup
+- Install deps
+```console
+npm install --save-dev rollup rollup-plugin-delete rollup-plugin-node-externals @rollup/plugin-babel @rollup/plugin-commonjs @rollup/plugin-node-resolve
+```
+- Config `rollup` in `rollup.config.js`
+- Update `package.json` with build output:
+```json
+"main": "dist/index.cjs.js",
+"module": "dist/index.esm.js",
+"sideEffects": false,
+"scripts": {
+    "build": "npm run build:js",
+    "build:js": "rollup -c rollup.config.js",
+}
+```
