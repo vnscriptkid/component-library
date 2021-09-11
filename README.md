@@ -123,3 +123,6 @@ npm install --save-dev rollup rollup-plugin-delete rollup-plugin-node-externals 
     "build:types": "tsc -p tsconfig.build.json"
 }
 ```
+
+## Github Actions
+- Config workflow in `.github/workflows/publish.yml`
